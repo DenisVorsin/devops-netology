@@ -81,9 +81,18 @@
 
 
 7. Кто автор функции synchronizedWriters?
-    Функция с таким именем не найдена. 
+    Martin Atkins, но позднее функция была удалена. 
 
+	   $ git log -SsynchronizedWriters --reverse
+	   commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5
+	   Author: Martin Atkins <mart@degeneration.co.uk>
+	   Date:   Wed May 3 16:25:41 2017 -0700
 
-	    $ git grep -r "synchronizedWriters"
-	    $ grep -Rl synchronizedWriters *
-	    $ 
+	       main: synchronize writes to VT100-faker on Windows
+    
+	   commit bdfea50cc85161dea41be0fe3381fd98731ff786
+	   Author: James Bardin <j.bardin@gmail.com>
+	   Date:   Mon Nov 30 18:02:04 2020 -0500
+	   
+	       remove unused
+
