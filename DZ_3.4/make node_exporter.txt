@@ -1,0 +1,11 @@
+sudo apt update
+
+git clone https://github.com/prometheus/node_exporter.git
+
+cd node_exporter/
+sudo apt install make
+sudo snap install go --classic
+sudo apt install gcc
+make
+
+./node_exporter --help
