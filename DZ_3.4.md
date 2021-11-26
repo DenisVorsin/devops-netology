@@ -117,8 +117,8 @@ make
 
 проследить какой процесс заспамил, можно через `systemd-cgtop`
 
-![cgtop1](https://i.ibb.co/yq2GsP3/2021-11-26-16-05-44.jpg)
+![cgtop2](https://i.ibb.co/xLnTh45/2021-11-26-15-58-56.jpg)
 
 изменить ограничение можно через `ulimit -u`
 
-![cgtop2](https://i.ibb.co/xLnTh45/2021-11-26-15-58-56.jpg)
+![cgtop1](https://i.ibb.co/yq2GsP3/2021-11-26-16-05-44.jpg)
