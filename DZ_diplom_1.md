@@ -57,6 +57,11 @@ vault write pki_int/issue/denisvorsin-dot-local common_name="test.denisvorsin.lo
 
 ```
 
+Скриншот с выпуска сертификата:
+
+![gen1](DZ_diplom_1/2021-12-16%2022_40_00.jpg)
+
+![gen2](DZ_diplom_1/2021-12-16%2022_40_36.jpg)
 
 ### 3. Процесс установки и настройки сервера nginx
 
