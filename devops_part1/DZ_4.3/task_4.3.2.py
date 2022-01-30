@@ -19,10 +19,10 @@ while 1==1 :
         if hosts[name] != host_ip:
             print("[ERROR] ", name,"IP mismatch:",hosts[name],host_ip)
             hosts[name] = host_ip
-            fj = open('hosts.json','w')
+            fj = open('hosts.json', 'w')
             json.dump(hosts,fj)
             fj.close()
-            fy = open('hosts.yaml','w')
+            fy = open('hosts.yaml', 'w')
             yaml.dump(hosts, fy)
             fy.close()
 

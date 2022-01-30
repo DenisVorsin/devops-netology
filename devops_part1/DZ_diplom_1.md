@@ -36,9 +36,9 @@ sudo ufw default deny outgoing
 
 Установка:
 
-![vault1](DZ_diplom_1/2021-12-15%2018_05_34_vault1.jpg)
+![vault1](DZ_diplom_1/2021-12-15 18_05_34_vault1.jpg)
 
-![vault2](DZ_diplom_1/2021-12-15%2018_05_16_vault2.jpg)
+![vault2](DZ_diplom_1/2021-12-15 18_05_16_vault2.jpg)
 
 Выпуск сертификата:
 ```shell
@@ -59,9 +59,9 @@ vault write pki_int/issue/denisvorsin-dot-local common_name="test.denisvorsin.lo
 
 Скриншот с выпуска сертификата:
 
-![gen1](DZ_diplom_1/2021-12-16%2022_40_00.jpg)
+![gen1](DZ_diplom_1/2021-12-16 22_40_00.jpg)
 
-![gen2](DZ_diplom_1/2021-12-16%2022_40_36.jpg)
+![gen2](DZ_diplom_1/2021-12-16 22_40_36.jpg)
 
 ### 3. Процесс установки и настройки сервера nginx
 
@@ -71,32 +71,32 @@ sudo systemctl enable nginx
 vi /etc/nginx/sites-available/default
 sudo systemctl start nginx
 ```
-![nginx](DZ_diplom_1/2021-12-15%2018_06_57_nginx1.jpg)
+![nginx](DZ_diplom_1/2021-12-15 18_06_57_nginx1.jpg)
 
 Конфигурация nginx:
 
-![nginx](DZ_diplom_1/2021-12-16%2018_16_11.jpg)
+![nginx](DZ_diplom_1/2021-12-16 18_16_11.jpg)
 
 ### 4. Страница сервера nginx в браузере хоста не содержит предупреждений
 
-![chrome](DZ_diplom_1/2021-12-16%2018_05_23.jpg)
+![chrome](DZ_diplom_1/2021-12-16 18_05_23.jpg)
 
-![chrome](DZ_diplom_1/2021-12-16%2018_06_07.jpg)
+![chrome](DZ_diplom_1/2021-12-16 18_06_07.jpg)
 
-![cert](DZ_diplom_1/2021-12-16%2018_02_35.jpg)
+![cert](DZ_diplom_1/2021-12-16 18_02_35.jpg)
 
 ### 5. Скрипт генерации нового сертификата работает (сертификат сервера ngnix должен быть "зеленым")
 
 Для обновления сертификата использовано приложение consul-template
 Ниже его настройки:
 
-![consul](DZ_diplom_1/2021-12-16%2018_00_24.jpg)
+![consul](DZ_diplom_1/2021-12-16 18_00_24.jpg)
 
 ### 6. Crontab работает (выберите число и время так, чтобы показать что crontab запускается и делает что надо)
 
 Для демонстрации в кроне в качестве времени для запуска использовал текущее время. 
 Далее через `journalctl` вывел текущие логи системы где видно момент запуска `cron` 
 
-![cron1](DZ_diplom_1/2021-12-16%2017_59_44.jpg)
+![cron1](DZ_diplom_1/2021-12-16 17_59_44.jpg)
 
-![cron2](DZ_diplom_1/2021-12-16%2017_56_52.jpg)
+![cron2](DZ_diplom_1/2021-12-16 17_56_52.jpg)
