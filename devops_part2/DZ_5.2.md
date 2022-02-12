@@ -79,4 +79,4 @@ vagrant@server1:~$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 vagrant@server1:~$ 
 ```
-[Vagrant up log](devops_part2/DZ_5.2/vagrant_up.log)
+[Vagrant up log](DZ_5.2/vagrant_up.log)
