@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_1
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./:/opt/scripts
+    environment:
+      - MYSQL_ROOT_PASSWORD=test-pass
+      - MYSQL_PASSWORD=test-pass
+      - MYSQL_USER=test
+      - MYSQL_DATABASE=test_db
