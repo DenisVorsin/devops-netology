@@ -19,7 +19,7 @@
 
 В следующих заданиях мы будем продолжать работу с данным контейнером.
 
-Ответ:
+### Ответ:
 
 Docker-compose файл для создания инстанса [docker-compose.yaml](DZ_6.3/src/docker-compose.yaml)
 ```
@@ -92,7 +92,7 @@ mysql> select count(*) from orders where price > '300';
 Используя таблицу INFORMATION_SCHEMA.USER_ATTRIBUTES получите данные по пользователю `test` и 
 **приведите в ответе к задаче**.
 
-Ответ:
+### Ответ:
 
 Плагин авторизации указан в docker-compose.yaml, пользователь test там же создан. 
 Вручную создадим пользователя test_1: [create_user.sql](DZ_6.3/src/create_user.sql)
@@ -148,7 +148,7 @@ mysql> show grants for 'test_1'@'localhost';
 - на `MyISAM`
 - на `InnoDB`
 
-Ответ:
+### Ответ:
 
 ```
 mysql> SET profiling = 1;
@@ -195,7 +195,7 @@ mysql> show profiles;
 
 Приведите в ответе измененный файл `my.cnf`.
 
-Ответ:
+### Ответ:
 
 Файл [my.cnf](DZ_6.3/src/my.cnf)
 
