@@ -9,6 +9,7 @@
 
 Ответ:
 
+[docker-compose.yaml](DZ_6.2/src/docker-compose.yaml)
 ```yaml
 version: '3.3'
 services:
@@ -24,6 +25,8 @@ services:
     volumes:
       - ./db:/var/lib/postgresql/data
       - ./backup:/var/lib/postgresql/backup
+      - ./:/var/lib/postgresql/scripts
+
 
 ```
 
