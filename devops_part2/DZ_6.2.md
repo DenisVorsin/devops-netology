@@ -299,4 +299,6 @@ Creating postgres_2 ... done
 $ docker exec -ti postgres_2 psql -U postgres -f /var/lib/postgresql/backup/dumpall_test_db.sql
 
 ```
-[restore.log](DZ_6.2/src/restore.log)
+Лог восстановления [restore.log](DZ_6.2/src/restore.log)
+
+Дамп базы [dumpall_test_db.sql](DZ_6.2/src/backup/dumpall_test_db.sql)
