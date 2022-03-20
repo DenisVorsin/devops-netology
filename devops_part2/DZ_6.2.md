@@ -7,7 +7,7 @@
 
 Приведите получившуюся команду или docker-compose манифест.
 
-Ответ:
+### Ответ:
 
 [docker-compose.yaml](DZ_6.2/src/docker-compose.yaml)
 ```yaml
@@ -56,7 +56,7 @@ services:
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 - список пользователей с правами над таблицами test_db
 
-Ответ:
+### Ответ:
 
 [init_db.sql](DZ_6.2/src/init_db.sql)
 ```
@@ -163,7 +163,7 @@ test_db=# \du
     - запросы 
     - результаты их выполнения.
 
-Ответ:
+### Ответ:
 
 [Create_dataset_1.sql](DZ_6.2/src/create_dataset_1.sql)
 ```
@@ -202,7 +202,7 @@ test_db=# select count(*) from orders;
  
 Подсказк - используйте директиву `UPDATE`.
 
-Ответ:
+### Ответ:
 
 SQL-запросы для выполнения данных операций: [update_dataset_1.sql](DZ_6.2/src/update_dataset_1.sql)
 ```
@@ -229,6 +229,8 @@ test_db=# select * from clients where booking is not null;
 (используя директиву EXPLAIN).
 
 Приведите получившийся результат и объясните что значат полученные значения.
+
+### Ответ:
 
 ```
 test_db=# explain select * from clients where booking is not null;
@@ -279,7 +281,7 @@ test_db=# explain (format json) select * from clients where booking is not null;
 
 Приведите список операций, который вы применяли для бэкапа данных и восстановления. 
 
-Ответ:
+### Ответ:
 ```
 #бекап всего постгреса
 $ docker exec -ti postgres_1 pg_dumpall -U postgres -f /var/lib/postgresql/backup/dumpall_test_db.sql
