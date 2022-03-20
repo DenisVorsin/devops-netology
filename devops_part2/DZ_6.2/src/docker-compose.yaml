@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:12.10-bullseye
+    container_name: postgres_2
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db2:/var/lib/postgresql/data
+      - ./backup:/var/lib/postgresql/backup
+      - ./:/var/lib/postgresql/scripts
