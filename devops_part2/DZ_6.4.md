@@ -93,7 +93,7 @@ INSERT 0 8
 Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца `title` для таблиц `test_database`?
 
 ### Ответ:
-[Database dump](devops_part2/DZ_6.4/src/dump_test_database.sql)
+[Database dump](DZ_6.4/src/dump_test_database.sql)
 ```
 Для обеспечения уникальности в создание таблиц orders можно добавить 
 UNIQUE(title)
