@@ -249,12 +249,14 @@ Enter host password for user 'elastic':
 
 **Ответ**
 ```
+#Регистрация каталога для снапшотов
 curl --cacert ./http_ca.crt -u elastic -XPOST https://localhost:9200/_snapshot/netology_backup?pretty -H 'Content-Type: application/json' -d'{"type": "fs", "settings": { "location":"/elasticsearch-8.3.1/snapshots" }}'
 Enter host password for user 'elastic':
 {
   "acknowledged" : true
 }
 
+#листинг регистрации
 $ curl --cacert ./http_ca.crt -u elastic -XGET https://localhost:9200/_snapshot/netology_backup?pretty
 Enter host password for user 'elastic':
 {
@@ -266,20 +268,23 @@ Enter host password for user 'elastic':
   }
 }
 
+#создание индекса
 $ curl --cacert ./http_ca.crt -u elastic -XPUT https://localhost:9200/test -H 'Content-Type: application/json' -d'{ "settings": { "number_of_shards": 1,  "number_of_replicas": 0 }}'
 Enter host password for user 'elastic':
 {"acknowledged":true,"shards_acknowledged":true,"index":"test"}
 
+#листинг индексов
 $ curl --cacert ./http_ca.crt -u elastic -X GET https://localhost:9200/_cat/indices?v
 Enter host password for user 'elastic':
 health status index uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 green  open   test  FrdFdBxMQN21SaQ4QbYhRA   1   0          0            0       225b           225b
 
-
+#создание снапшота
 $ curl --cacert ./http_ca.crt -u elastic -X PUT https://localhost:9200/_snapshot/netology_backup/elasticsearch?wait_for_completion=true
 Enter host password for user 'elastic':
 {"snapshot":{"snapshot":"elasticsearch","uuid":"4Rrly2TETf2pwufGqTaRnQ","repository":"netology_backup","version_id":8030199,"version":"8.3.1","indices":[".security-7","test",".geoip_databases"],"data_streams":[],"include_global_state":true,"state":"SUCCESS","start_time":"2022-07-01T17:16:50.749Z","start_time_in_millis":1656695810749,"end_time":"2022-07-01T17:16:51.749Z","end_time_in_millis":1656695811749,"duration_in_millis":1000,"failures":[],"shards":{"total":3,"failed":0,"successful":3},"feature_states":[{"feature_name":"geoip","indices":[".geoip_databases"]},{"feature_name":"security","indices":[".security-7"]}]}}
 
+#листинг каталога
 [elasticsearch@4158db37ec2d snapshots]$ ls -lah
 total 44K
 drwxr-xr-x 1 elasticsearch elasticsearch 4.0K Jul  1 17:16 .
@@ -290,15 +295,18 @@ drwxr-xr-x 5 elasticsearch elasticsearch 4.0K Jul  1 17:16 indices
 -rw-r--r-- 1 elasticsearch elasticsearch  19K Jul  1 17:16 meta-4Rrly2TETf2pwufGqTaRnQ.dat
 -rw-r--r-- 1 elasticsearch elasticsearch  389 Jul  1 17:16 snap-4Rrly2TETf2pwufGqTaRnQ.dat
 
+#удаление индекса
 $ curl --cacert ./http_ca.crt -u elastic -X DELETE 'https://localhost:9200/test?pretty'
 Enter host password for user 'elastic':
 {
   "acknowledged" : true
 }
 
+#создание второго индекса
 $ curl --cacert ./http_ca.crt -u elastic -XPUT https://localhost:9200/test-2 -H 'Content-Type: application/json' -d'{ "settings": { "number_of_shards": 1,  "number_of_replicas": 0 }}'
 {"acknowledged":true,"shards_acknowledged":true,"index":"test-2"}
 
+#листинг снапшотов
 $ curl --cacert ./http_ca.crt -u elastic -XGET https://localhost:9200/_snapshot/netology_backup/*?pretty
 Enter host password for user 'elastic':
 {
@@ -348,13 +356,14 @@ Enter host password for user 'elastic':
   "remaining" : 0
 }
 
-
+#восстановление снапшота
 $ curl --cacert ./http_ca.crt -u elastic -XPOST https://localhost:9200/_snapshot/netology_backup/elasticsearch/_restore?pretty -H 'Content-Type: application/json' -d'{"include_global_state":true}'
 Enter host password for user 'elastic':
 {
   "accepted" : true
 }
 
+#листинг индексов
 $ curl --cacert ./http_ca.crt -u elastic -X GET https://localhost:9200/_cat/indices?v
 Enter host password for user 'elastic':
 health status index  uuid                   pri rep docs.count docs.deleted store.size pri.store.size
