@@ -39,13 +39,6 @@ New value: nnwE6xHb+XsU1GMLBLVs
 
 $ docker cp elastic_1:/elasticsearch-8.3.1/config/certs/http_ca.crt .
 
-#загрузка образа
-docker tag es:0.1 denisvorsin/es:0.1
-docker push denisvorsin/es:0.1
-
-#ссылка:
-
-
 $ curl --cacert ./http_ca.crt -u elastic https://localhost:9200
 Enter host password for user 'elastic':
 {
@@ -65,9 +58,18 @@ Enter host password for user 'elastic':
   "tagline" : "You Know, for Search"
 }
 
-#загрузка образа
-docker tag es:0.1 denisvorsin/es:0.1
-docker push denisvorsin/es:0.1
+#загрузка образа на docker.io
+docker tag es:0.2 denisvorsin/es:0.2
+docker push denisvorsin/es:0.2
+The push refers to repository [docker.io/denisvorsin/es]
+d79804d0fbef: Pushed 
+e7ca047d0a08: Pushed 
+d12adfce9a30: Pushed 
+3eb0c1d3929e: Pushed 
+0f26991dd865: Layer already exists 
+83bfc9865af3: Layer already exists 
+174f56854903: Layer already exists 
+0.2: digest: sha256:f65c5e1c7efadeb1e31e043e60bcb252f65e3113c1e9028607c0c672429e4e98 size: 1791
 
 #ссылка:
 https://hub.docker.com/repository/docker/denisvorsin/es
